@@ -69,3 +69,12 @@
 .main-container{
     flex-direction: column;
 }
+.label{
+    visibility: hidden;
+    float: left;
+    font-size: 9pt;
+    color: gray;
+    padding-bottom: 4pt;
+    width: 100%;
+    display: flex;
+}

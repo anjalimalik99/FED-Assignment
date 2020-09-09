@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import '../styles/Login.css'
+import '../styles/Login.scss'
 import SideBar from './SideBar';
 import Header from './Header';
-import Register from './Register'
-import {BrowserRouter as Router ,NavLink, Route} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 class Login extends Component {
     constructor(props) {
@@ -13,7 +12,30 @@ class Login extends Component {
            username : '',
            password: ''
         }
+        this.handleEmail = this.handleEmail.bind(this);
+        this.handlePswrd = this.handlePswrd.bind(this);
+
       };
+    handleEmail(event)
+    {
+      this.setState(
+        {
+         username : event.target.newValue
+        }
+      )
+      let el = document.querySelector('#email-label');
+      el.style.visibility='visible';
+    }
+    handlePswrd(event)
+    {
+      this.setState(
+        {
+         password : event.target.newValue
+        }
+      )
+      let el = document.querySelector('#pswrd-label');
+      el.style.visibility='visible';
+    }
   render() {
     return (
       <div className="main-container">
@@ -28,8 +50,12 @@ class Login extends Component {
       <NavLink to="/register" className = "create-account">Create Account</NavLink>
       
       <div className="form">
-      <input className="input-field" type = "email" placeholder ="Registered Email ID"></input><br></br>
-      <input className="input-field" type = "password" placeholder = "Password"></input>
+      <label id="email-label" className="label">Username/email</label>
+      <input className="input-field" type = "email" placeholder ="Registered Email ID"
+       onChange={this.handleEmail}></input><br></br>
+      <label id="pswrd-label" className="label">Password</label>
+      <input className="input-field" type = "password" placeholder = "Password"
+      onChange={this.handlePswrd}></input>
    
       <NavLink to="/services" className="lgn-btn">Login</NavLink>
      
