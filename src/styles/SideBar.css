@@ -1,0 +1,32 @@
+.side-bar{
+    float: left;
+    width: 30%;
+    margin-left: 15%;
+}
+.heading{
+    font-size: 15pt;
+    float: left;
+    padding: 0;
+    margin-top: 10pt;
+    
+}
+.image{
+    float: left;
+     width: 100%;
+     height: 20%;
+}
+.lgn{
+    width : 100%;
+    margin : 2em;
+}
+.payment{
+    padding: 10pt;
+    width: 100%;
+    margin: 2em;
+}
+.description{
+    color:grey;
+    width: 100%;
+    float: left;
+    text-align: left;
+}

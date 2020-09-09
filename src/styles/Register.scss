@@ -1,0 +1,69 @@
+.label{
+    visibility: hidden;
+}
+.container{
+  display: flex;
+}
+.register{
+    height: auto;
+    width: 30%;
+    
+    padding: 15pt;
+    float: left;
+    margin-left: 70pt;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+}
+.register-label{
+    font-size: 15pt;
+    text-align: left;
+    width: 100%;
+}
+ .already-reg, .lgn-link{
+    float: left;
+    font-size: 9pt;
+    padding-bottom: 10pt;
+ }
+ .lgn-link{
+     padding-left: 4pt;
+ }
+ .form-field{
+    display: flex;
+    flex-direction: row;
+    height: 15pt;
+    width: 70%;
+    padding: 5pt;
+    border-radius: 2pt;
+    border-width: 1pt;
+ }
+ .label1{
+     font-size: 10pt;
+     
+ }
+ .check-box,.check-box1{
+    display:flex;
+    flex-direction: row;
+    margin-top:5pt;
+ }
+ .rgstr-btn{
+    background-color: #007ec1;
+    width: 75%;
+    height: 25pt;
+    margin-top: 10pt;
+    color:white;
+    padding: 5pt;
+    border:none;
+    border-radius:2pt;
+    text-align: center;
+    float: left;
+    font-size: 15pt;
+     }
+     .terms{
+        color: #007ec1;
+        display: inline;
+        padding-left: 2pt;
+    }
+     
+     
