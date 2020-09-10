@@ -1,8 +1,7 @@
 import React from "react";
-import logo from "./logo.svg";
-import Login from "./components/Login";
+import Login from "./pages/login";
 import "./App.css";
-import Register from "./components/Register";
+import Register from "./pages/registration";
 import Services from "./components/Services";
 import {
   Switch,
@@ -10,7 +9,6 @@ import {
   Redirect,
   BrowserRouter as Router,
 } from "react-router-dom";
-import Routers from "./components/Routers";
 
 function App() {
   return (
