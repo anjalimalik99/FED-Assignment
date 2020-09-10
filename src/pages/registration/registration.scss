@@ -1,9 +1,40 @@
-.label {
-  visibility: hidden;
-}
+.registration{
+  width:100%;
+  display: flex;
+  flex-direction: column;
 .container {
   display: flex;
 }
+.form{
+  width: 80%;
+  height: auto;
+}
+.register-label {
+  font-size: 20px;
+  text-align: left;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.already-reg,
+.lgn-link {
+  float: left;
+  font-size: 14px;
+  padding-bottom: 10pt;
+}
+.lgn-link {
+  padding-left: 4pt;
+  color:#007ec1;
+}
+.label {
+  visibility: hidden;
+  float: left;
+  font-size: 9pt;
+  color: black;
+  padding-bottom: 2pt;
+  width: 100%;
+  display: flex;
+}
+
 .register {
   height: auto;
   width: 30%;
@@ -12,57 +43,108 @@
   float: left;
   margin-left: 70pt;
 }
-.main {
-  display: flex;
-  flex-direction: column;
-}
-.register-label {
-  font-size: 15pt;
-  text-align: left;
-  width: 100%;
-}
-.already-reg,
-.lgn-link {
-  float: left;
-  font-size: 9pt;
-  padding-bottom: 10pt;
-}
-.lgn-link {
-  padding-left: 4pt;
-}
+
 .form-field {
   display: flex;
   flex-direction: row;
-  height: 15pt;
-  width: 70%;
+  height: 15px;
+  width: 60%;
   padding: 5pt;
   border-radius: 2pt;
   border-width: 1pt;
+  font-size: 14px;
+}
+
+.rgstr-btn {
+  background-color: #007ec1;
+  width: 60%;
+  height: 25px;
+  margin-top: 10pt;
+  color: white;
+  padding: 5px;
+  border: none;
+  border-radius: 2pt;
+  text-align: center;
+  float: left;
+  font-size: 14px;
+}
+.code {
+  width: 10%;
+}
+.drop-down {
+  float: left;
+  width: 20%;
+  height: 26pt;
+  padding: 5pt;
+  border-radius: 2pt;
+  border-width: 1pt;
+  border-style: none;
+  margin-right: 0;
+  color: gray
+}
+.tel-field{
+  float: left;
+  width: 76%;
+  height: 20pt;
+  padding: 3pt;
+  border-width: 1pt;
+  margin:0;
+  border-right: 0px;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  border-left: 0.5px solid initial;
+}
+.tel{
+  
+  border:1px solid ;
+  border-radius: 2pt;
+  border-style: inset;
+  border-color: initial;
+  width: 60%;
+  height: 26pt;
+  margin-top: 15pt;
+  padding-top:0
+}
+.business-type{
+  display:flex;
+  flex-direction: row;
+  float: left;
+  width: 90%;
+  padding: 0;
+}
+.company{
+  height: 15pt;
+  width: auto;
+  margin-right: 10pt;
+  float: left;
+  padding: 5pt;
+  font-size: 14px;
+  font-weight: bold;
+  color:initial;
+  border-width: 1px ;
+  border-style: inset;
+  border-radius: 2pt;
+  display: flex;
+  flex-direction: row;
+}
+.company.active{
+  background-color: #EDF5FB;
+  color: #007ec1
 }
 .label1 {
-  font-size: 10pt;
+  font-size: 14px;
+  text-align: left;
 }
 .check-box,
 .check-box1 {
   display: flex;
   flex-direction: row;
-  margin-top: 5pt;
-}
-.rgstr-btn {
-  background-color: #007ec1;
-  width: 75%;
-  height: 25pt;
-  margin-top: 10pt;
-  color: white;
-  padding: 5pt;
-  border: none;
-  border-radius: 2pt;
-  text-align: center;
-  float: left;
-  font-size: 15pt;
+  margin-top: 10px;
+  width: 100%;
 }
 .terms {
   color: #007ec1;
   display: inline;
   padding-left: 2pt;
+}
 }

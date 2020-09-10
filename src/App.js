@@ -3,6 +3,7 @@ import Login from "./pages/login";
 import "./App.css";
 import Register from "./pages/registration";
 import Services from "./pages/services";
+import Payment from "./pages/payment";
 import {
   Switch,
   Route,
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/" component={Login}></Route>
           <Route exact path="/register" component={Register}></Route>
           <Route exact path="/services" component={Services}></Route>
+          <Route exact path="/payment" component={Payment}></Route>
           <Redirect to="/"></Redirect>
         </Switch>
       </Router>

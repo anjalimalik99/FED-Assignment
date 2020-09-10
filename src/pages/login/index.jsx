@@ -1,56 +1,68 @@
-import React, { Component } from "react";
-import "./login.scss";
-import SideBar from "../../components/side-bar";
-import Header from "../../components/header";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import './login.scss'
+import SideBar from '../../components/side-bar/index';
+import Header from '../../components/header/index';
+import {NavLink} from 'react-router-dom'
 
 class Login extends Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
+      
+        this.state = {
+           username : '',
+           password: ''
+        }
+        this.handleEmail = this.handleEmail.bind(this);
+        this.handlePswrd = this.handlePswrd.bind(this);
 
-    this.state = {
-      username: "",
-      password: "",
-    };
-  }
+      };
+    handleEmail(event)
+    {
+      this.setState(
+        {
+         username : event.target.newValue
+        }
+      )
+      let el = document.querySelector('#email-label');
+      el.style.visibility='visible';
+    }
+    handlePswrd(event)
+    {
+      this.setState(
+        {
+         password : event.target.newValue
+        }
+      )
+      let el = document.querySelector('#pswrd-label');
+      el.style.visibility='visible';
+    }
   render() {
     return (
-      <div className="main-container">
+      <div className="login">
         <Header></Header>
-
-        <div className="container">
-          <SideBar></SideBar>
-          <div className="login">
-            <div className="login-label">Login to Naukari</div>
-            <div className="new-client">New Client ?</div>
-
-            <Link to="/register" className="create-account">
-              Create Account
-            </Link>
-
-            <div className="form">
-              <input
-                className="input-field"
-                type="email"
-                placeholder="Registered Email ID"
-              ></input>
-              <br></br>
-              <input
-                className="input-field"
-                type="password"
-                placeholder="Password"
-              ></input>
-
-              <Link to="/services" className="lgn-btn">
-                Login
-              </Link>
-            </div>
-            <div className="fgt-pswrd">Forgot Password</div>
-            <div className="trouble-msg">
-              Trouble logging in ? <div className="contact">Contact us</div>
-            </div>
-          </div>
-        </div>
+      <div className="container">
+        <SideBar></SideBar>
+      <div className="lgn"> 
+      <div className="login-label">Login to Naukari</div>
+      <div className="new-client">New Client ?</div>
+      
+      <NavLink to="/register" className = "create-account">Create Account</NavLink>
+      
+      <div className="form">
+      <label id="email-label" className="label">Username/email</label>
+      <input className="input-field" type = "email" placeholder ="Registered Email ID"
+       onChange={this.handleEmail}></input><br></br>
+      <label id="pswrd-label" className="label">Password</label>
+      <input className="input-field" type = "password" placeholder = "Password"
+      onChange={this.handlePswrd}></input>
+   
+      <NavLink to="/services" className="lgn-btn">Login</NavLink>
+     
+      </div>
+      <div className="fgt-pswrd">Forgot Password</div>
+      <div className="trouble-msg">Trouble logging in ? <div className="contact">Contact us</div></div>
+      </div>
+      </div>
       </div>
     );
   }

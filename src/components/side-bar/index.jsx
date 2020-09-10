@@ -1,27 +1,30 @@
-import React from "react";
-import "./side-bar.scss";
+import React from 'react'
+import './side-bar.scss'
 function SideBar() {
-  // const [id,setId] = useState()
-  return (
-    <div className="side-bar">
-      <div className="lgn">
-        <div className="heading">Create Account or Login</div>
-        <div className="description">
-          Create you company account on Naukari or sign in to proceed with your
-          payment
+    return (
+        
+        <div className ="side-bar">
+          <div className = "lgn">
+          <div className="head-circle-1">
+          <div className="circle">1</div>
+          <div className = "heading">Create Account or Login</div>
+          </div>
+          <div className="first-option">
+          <div className="description">Create you company account on Naukari or sign in to proceed with your payment</div>
+          <img className= "image" src={require("../../assets/images/image.jpg")}/>
+          </div>
+           </div>
+           <div className="payment">
+           <div className="head-circle2">
+               <div className="circle2">2</div> 
+               <div className = "heading">Make Payment</div>
+           </div>  
+           <div className="second-option">
+            <div className="description">Review order and make payment</div>
+            </div>
+           </div>
         </div>
-        <img
-          className="image"
-          src={require("../../assets/images/image.jpg")}
-          alt="not found"
-        />
-      </div>
-      <div className="payment">
-        <div className="heading">Make Payment</div>
-        <div className="description">Review order and make payment</div>
-      </div>
-    </div>
-  );
+    )
 }
 
-export default SideBar;
+export default SideBar
