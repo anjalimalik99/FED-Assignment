@@ -2,7 +2,7 @@ import React from "react";
 import Login from "./pages/login";
 import "./App.css";
 import Register from "./pages/registration";
-import Services from "./components/Services";
+import Services from "./pages/services";
 import {
   Switch,
   Route,
