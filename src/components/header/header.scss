@@ -1,9 +1,12 @@
-.logo {
-  height: 30pt;
-  width: 10%;
-  float: left;
-}
+
 .header {
   padding-left: 20%;
   width: 100%;
+
+  .logo {
+    height: 30pt;
+    width: 10%;
+    float: left;
+  }
+  
 }
