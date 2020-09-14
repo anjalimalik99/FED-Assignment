@@ -11,6 +11,7 @@ import {
   BrowserRouter as Router,
 } from "react-router-dom";
 import Products from "./pages/product";
+import ReduxSample from "./pages/sample-page-redux";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/register" component={Register}></Route>
           <Route exact path="/services" component={Services}></Route>
           <Route exact path="/payment" component={Payment}></Route>
+          <Route exact path="/redux" component={ReduxSample}></Route>
           <Redirect to="/"></Redirect>
         </Switch>
       </Router>
