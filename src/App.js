@@ -10,13 +10,14 @@ import {
   Redirect,
   BrowserRouter as Router,
 } from "react-router-dom";
+import Products from "./pages/product";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/" component={Login}></Route>
+          <Route exact path="/" component={Products}></Route>
           <Route exact path="/register" component={Register}></Route>
           <Route exact path="/services" component={Services}></Route>
           <Route exact path="/payment" component={Payment}></Route>

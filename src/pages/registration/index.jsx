@@ -135,6 +135,7 @@ export class Register extends Component {
                 type="text"
                 placeholder="Company Name"
                 className="form-field"
+                required
                 onChange={this.companyName}
               ></input>
               <label id="email-label" className="label">
@@ -144,6 +145,7 @@ export class Register extends Component {
                 type="email"
                 placeholder="Official Email"
                 className="form-field"
+                required
                 onChange={this.emailId}
               ></input>
               
@@ -151,7 +153,7 @@ export class Register extends Component {
                 Mobile/Landline
               </label>
               <div className="tel">
-              <select name="code" id="code" className="drop-down">
+              <select name="code" id="code" className="drop-down" required>
                 <option value="+91">+91</option>
                 <option value="+1 684">+1 684</option>
                 <option value="+213">+213</option>
@@ -161,6 +163,7 @@ export class Register extends Component {
                 type="tel"
                 placeholder=" Mobile/Landline"
                 className="tel-field"
+                required
                 onChange={this.mobileNumber}
               ></input>
               </div>
@@ -171,6 +174,7 @@ export class Register extends Component {
                 type="text"
                 placeholder="Contact Person's Name"
                 className="form-field"
+                required
                 onChange={this.personName}
               ></input>
               <label className="label">Business Type</label>
