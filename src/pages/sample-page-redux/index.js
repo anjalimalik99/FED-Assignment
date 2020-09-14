@@ -6,7 +6,15 @@ import { resetPageNo } from "./../../redux/app/actions";
 
 class ReduxSample extends React.Component {
   render() {
-    return <div>Redux setup complete</div>;
+    return (
+      <div
+        onClick={() => {
+          resetPageNo();
+        }}
+      >
+        Redux setup complete{this.props.searchString}
+      </div>
+    );
   }
 }
 
