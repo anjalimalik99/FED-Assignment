@@ -1,8 +1,5 @@
 import React from "react";
-import Login from "./pages/login";
 import "./App.css";
-import Register from "./pages/registration";
-import Services from "./pages/services";
 import Payment from "./pages/payment";
 import {
   Switch,
@@ -12,6 +9,7 @@ import {
 } from "react-router-dom";
 import Products from "./pages/product";
 import ReduxSample from "./pages/sample-page-redux";
+import LoginRegister from "./pages/login-register";
 
 function App() {
   return (
@@ -19,11 +17,9 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Products}></Route>
-          <Route exact path="/register" component={Register}></Route>
-          <Route exact path="/services" component={Services}></Route>
+          <Route exact path="/login" component={LoginRegister}></Route>
           <Route exact path="/payment" component={Payment}></Route>
           <Route exact path="/redux" component={ReduxSample}></Route>
-          <Redirect to="/"></Redirect>
         </Switch>
       </Router>
     </div>

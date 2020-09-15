@@ -3,6 +3,7 @@ import Header from "../../components/header";
 import CreditCard from "../../components/creditCard"
 import MaterialIcon from 'material-icons-react';
 import { NavLink } from "react-router-dom";
+import { connect } from 'react-redux';
 import "./payment.scss"
 
 class Payment extends Component {
@@ -14,21 +15,22 @@ class Payment extends Component {
              amountPayable: 0,
              itemsInCart:0,
              items : ["1 Hot Vacancy","1 Classified"],
-             method:""
+             method:-1,
+             availableMethods:["Credit Card","Debit Card","Net Banking","Wallets" ,"Cash Cards"]
         }
         this.paymentMethod = this.paymentMethod.bind(this);
     }
-    paymentMethod(value)
-    {
+    paymentMethod(event){
+        console.log(event.target.id)
         this.setState({
-            method: value
-        })
+            method: event.target.id + 1
+        },()=>console.log(this.state.method))
     }
     
     render() {
         let paymentComponent;
         const method = this.state.method;
-        if(method === "creditCard")
+        if(method == 1)
          paymentComponent = <CreditCard/>
         return (
         <div className="payment">
@@ -43,7 +45,7 @@ class Payment extends Component {
           <div className = "heading-1">Create Account or Login</div>
           </div>
           <div className="first-option">
-          <div className="description-1">info@symbiosis.com <NavLink to="/" className="">Change Account</NavLink></div>
+          <div className="description-1">{this.props.userId} <NavLink to="/login" className="">Change Account</NavLink></div>
           </div>
            </div>
            <div className="pymnt">
@@ -60,15 +62,15 @@ class Payment extends Component {
         <div className="side-bar-r">
         <div className="user">
             <MaterialIcon icon="business"></MaterialIcon>
-            <div className="active-user">{this.state.user}</div>
+            <div className="active-user">{this.props.username}</div>
         </div>
             <div className="card-1">
                <div className="line-1">
                 <div className="total-amount-label">Total Amount Payable</div>
-                <div className="total-amount">Rs. {this.state.amountPayable}</div>
+                <div className="total-amount">Rs. {this.props.total}</div>
                 </div>
                 <div className="line-2">
-                <div className="items-name">{this.state.items.map((i) => <p>{i} | </p>)}
+                <div className="items-name">{this.props.addedItems.map((i) => <p>{i.quantity} {i.heading} |&nbsp;</p>)}
                 </div>
                 <p className="tax-label"><u>Incl. all taxes</u></p>
                 </div>
@@ -77,11 +79,8 @@ class Payment extends Component {
             <label className="method-label">Choose Payment Method</label>
             <div className="card-2">
                 <ul style={{listStyle:"none", float:"left", paddingLeft:"0", height:"auto",width:"40%"}}>
-                    <li className="list-item" onClick={() => this.paymentMethod("creditCard")}>Credit Card</li>
-                    <li className="list-item" onClick={() => this.paymentMethod("debitCard")}>Debit Card</li>
-                    <li className="list-item" onClick={() => this.paymentMethod("netBanking")}>Net Banking</li>
-                    <li className="list-item" onClick={() => this.paymentMethod("wallet")}>Wallets</li>
-                    <li className="list-item" onClick={() => this.paymentMethod("cash")}>Cash Cards</li>
+                   {this.state.availableMethods.map((i)=>
+                    <li className="list-item" id={this.state.availableMethods.indexOf(i)} onClick={(event) => this.paymentMethod(event)}>{i}</li>)} 
                 </ul>
                 <div className="payment-component">{paymentComponent}</div>
             </div>
@@ -91,5 +90,13 @@ class Payment extends Component {
         )
     }
 }
+const mapStateToProps = (state)=>{
+    return {
+      total:state.total,
+      addedItems : state.addedItems,
+      username : state.username,
+      userId :state.userId
+    }
+}
 
-export default Payment
+export default connect(mapStateToProps)(Payment);

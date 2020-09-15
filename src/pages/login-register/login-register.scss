@@ -1,0 +1,26 @@
+.main{
+display: flex;
+flex-direction: column;
+.container{
+    display: flex;
+    flex-direction: row;
+
+  }
+  .headings{
+      margin-left: 70pt;
+      margin-top: 50px;
+      padding-left: 15pt;
+
+  }
+  .line-2{
+    display: flex;
+    flex-direction: row;
+  }
+  .form-1
+  {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 50px;
+}
+}

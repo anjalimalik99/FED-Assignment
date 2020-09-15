@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Header from "../../components/header/index";
-import SideBar from "../../components/side-bar/index";
-import { NavLink } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import "./registration.scss";
+import { connect } from 'react-redux';
+import {loggedIn, changeComponent} from "../actions/cartActions";
 import MaterialIcon from 'material-icons-react';
 
 export class Register extends Component {
@@ -26,6 +26,9 @@ export class Register extends Component {
     this.GSTNumber = this.GSTNumber.bind(this);
     this.mobileNumber = this.mobileNumber.bind(this);
     this.radioHandler = this.radioHandler.bind(this);
+    this.submitForm = this.submitForm.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+
     // this.companyName = this.companyName.bind(this);
   }
 
@@ -114,20 +117,25 @@ export class Register extends Component {
      });
      
    }
+   submitForm(e)
+   {
+     e.preventDefault();
+     this.props.loggedIn(true);
+     this.props.history.push("/");
+   }
+   handleClick = () =>{
+         this.props.changeComponent("login")
+   }
    
   render() {
     return (
-      <div className="registration">
-        <Header></Header>
-        <div className="container">
-          <SideBar></SideBar>
           <div className="register">
-            <div className="register-label">Create Account</div>
-            <div className="already-reg">or already registered ?</div>
-            <NavLink to="/login" className="lgn-link">
+          <div className="register-label">Create Account</div>
+            <div className="already-reg">or already registered ?
+            <div className="lgn-link" onClick={this.handleClick}>
               Login Now
-            </NavLink>
-            <div className="form">
+            </div></div>
+            <form className="form" onSubmit={this.submitForm}>
               <label id="company-name-label" className="label">
                 Company Name
               </label>
@@ -204,28 +212,35 @@ export class Register extends Component {
                 <input
                   type="checkbox"
                   value="promotional communication"
+                  required
                 ></input>
                 <label className="label1">
                   I agree to receive Promotional Communication from Naukri
                 </label>
               </div>
               <div className="check-box1">
-                <input type="checkbox" value="terms and condition"></input>
+                <input type="checkbox" value="terms and condition" required></input>
                 <label className="label1">
                   I agree to Naukri's
                   <div className="terms">Terms and Conditions </div>
                   and <div className="terms">Privacy Policy</div>
                 </label>
               </div>
-              <NavLink to="/services" className="rgstr-btn">
+              <button type="submit" className="rgstr-btn">
                 Register
-              </NavLink>
-            </div>
+              </button>
+            </form>
           </div>
-        </div>
-      </div>
     );
   }
 }
 
-export default Register;
+
+const mapStateToDispatch = (dispatch) =>{
+  return{
+    loggedIn : (value) => {dispatch(loggedIn(value))},
+    changeComponent :(value) => {dispatch(changeComponent(value))}
+  }
+}
+
+export default connect(null,mapStateToDispatch)(withRouter(Register));
