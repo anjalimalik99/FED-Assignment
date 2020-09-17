@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link ,withRouter} from 'react-router-dom'
-import { cartState } from '../actions/cartActions';
+import { cartState } from '../../redux/actions/cartActions';
 import "./cart.scss";
 export class Cart extends Component {
     constructor(props) {
@@ -10,11 +10,10 @@ export class Cart extends Component {
         this.state = {
              
         }
-        this.submitForm = this.submitForm.bind(this);
     }
     
 
-    submitForm(e)
+    submitForm = (e) =>
     {
        e.preventDefault();
        this.props.history.push("/payment");

@@ -8,15 +8,7 @@ import { connect } from 'react-redux';
 
 
 export class Products extends Component {
-    constructor(props) {
-        super(props)
-    
-        this.state = {
-            
-        }
        
-    }
-    
     render() {
         return (
             <div className='products'>
@@ -40,12 +32,6 @@ export class Products extends Component {
         )
     }
 }
-// const mapDispatchToProps= (dispatch)=>{
-    
-//     return{
-//         addToCart: (id)=>{dispatch(addToCart(id))}
-//     }
-// }
 
 const mapStateToProps = (state)=>{
     return {

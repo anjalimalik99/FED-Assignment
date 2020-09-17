@@ -8,9 +8,8 @@ export class CreditCard extends Component {
         this.state = {
              selectedCard:""
         }
-        this.cardSelect = this.cardSelect.bind(this);
     }
-    cardSelect(value)
+    cardSelect = (value) =>
     {
         this.setState({
             selectedCard: value

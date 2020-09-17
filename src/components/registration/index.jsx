@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import "./registration.scss";
 import { connect } from 'react-redux';
-import {loggedIn, changeComponent} from "../actions/cartActions";
+import {loggedIn, changeComponent} from "../../redux/actions/cartActions";
 import MaterialIcon from 'material-icons-react';
 
 export class Register extends Component {
@@ -18,18 +18,6 @@ export class Register extends Component {
       gst: "",
       radio_btn: 1
     };
-
-    this.companyName = this.companyName.bind(this);
-    this.emailId = this.emailId.bind(this);
-    this.personName = this.personName.bind(this);
-    this.pinCode = this.pinCode.bind(this);
-    this.GSTNumber = this.GSTNumber.bind(this);
-    this.mobileNumber = this.mobileNumber.bind(this);
-    this.radioHandler = this.radioHandler.bind(this);
-    this.submitForm = this.submitForm.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-
-    // this.companyName = this.companyName.bind(this);
   }
 
   resetThenSet = (id, key) => {
@@ -41,7 +29,7 @@ export class Register extends Component {
     });
   };
 
-  companyName(event) {
+  companyName = (event) => {
     this.setState({
       company_name: event.target.newValue,
     });
@@ -49,7 +37,7 @@ export class Register extends Component {
     el.style.visibility = "visible";
     el.style.paddingTop = "20pt";
   }
-  emailId(event) {
+  emailId = (event) => {
     this.setState({
       email: event.target.newValue,
     });
@@ -58,7 +46,7 @@ export class Register extends Component {
     el.style.paddingTop = "20pt";
 
   }
-  mobileNumber(event) {
+  mobileNumber = (event) => {
     this.setState({
       mobile: event.target.newValue,
     });
@@ -69,8 +57,8 @@ export class Register extends Component {
     tel.style.marginTop = "35pt";
 
   }
-  personName(event) {
-    this.setState({
+  personName = (event) => {
+    this.setState({ 
       name: event.target.newValue,
     });
     let el = document.querySelector("#contact-name-label");
@@ -78,7 +66,7 @@ export class Register extends Component {
     el.style.paddingTop = "20pt";
 
   }
-  pinCode(event) {
+  pinCode = (event) => {
     this.setState({
       pincode: event.target.value,
     });
@@ -88,7 +76,7 @@ export class Register extends Component {
     console.log(this.state.pincode);
 
   }
-  GSTNumber(event) {
+  GSTNumber = (event) => {
     this.setState({
       gst: event.target.newValue,
     });
@@ -96,7 +84,7 @@ export class Register extends Component {
     el.style.visibility = "visible";
     el.style.paddingTop = "20pt";
   }
-  radioHandler(i)
+  radioHandler = (i) =>
   {
     this.setState({
          radio_btn : i
@@ -117,7 +105,7 @@ export class Register extends Component {
      });
      
    }
-   submitForm(e)
+   submitForm = (e) =>
    {
      e.preventDefault();
      this.props.loggedIn(true);

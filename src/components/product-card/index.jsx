@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Button } from "semantic-ui-react";
 import "./productCard.scss";
 import { connect } from 'react-redux';
-import { addToCart , cartState } from '../actions/cartActions';
+import { addToCart , cartState } from '../../redux/actions/cartActions';
 import {withRouter} from 'react-router-dom'
 
  class ProductCard extends Component {
@@ -20,11 +20,7 @@ import {withRouter} from 'react-router-dom'
             total:0,
             quantity:0
          }
-         this.calculate = this.calculate.bind(this);
-         this.addToCart = this.addToCart.bind(this);
-         this.buyNow = this.buyNow.bind(this);
-
-
+      
      }
      calculate = () =>
      {

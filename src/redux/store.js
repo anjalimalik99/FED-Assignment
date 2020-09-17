@@ -4,7 +4,7 @@ import createReducer from "./index";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from '../App';
-import cartReducer from '../components/reducers/cartReducer';
+import cartReducer from './reducers/cartReducer';
 import { Provider } from 'react-redux';
 
 // const initialState = {};

@@ -11,16 +11,11 @@ class Payment extends Component {
         super(props)
     
         this.state = {
-             user: "Symbiosis Technologies Pvt. Ltd.",
-             amountPayable: 0,
-             itemsInCart:0,
-             items : ["1 Hot Vacancy","1 Classified"],
              method:-1,
              availableMethods:["Credit Card","Debit Card","Net Banking","Wallets" ,"Cash Cards"]
         }
-        this.paymentMethod = this.paymentMethod.bind(this);
     }
-    paymentMethod(event){
+    paymentMethod = (event) => {
         console.log(event.target.id)
         this.setState({
             method: event.target.id + 1
@@ -61,7 +56,7 @@ class Payment extends Component {
         </div>
         <div className="side-bar-r">
         <div className="user">
-            <MaterialIcon icon="business"></MaterialIcon>
+            <MaterialIcon icon="business"/>
             <div className="active-user">{this.props.username}</div>
         </div>
             <div className="card-1">

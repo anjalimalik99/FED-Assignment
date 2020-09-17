@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './login.scss';
 import { connect } from 'react-redux'
-import {loggedIn,changeComponent} from "../actions/cartActions"
+import {loggedIn,changeComponent} from "../../redux/actions/cartActions"
 import { withRouter} from 'react-router-dom'
 
 class Login extends Component {
@@ -12,12 +12,9 @@ class Login extends Component {
            username : '',
            password: ''
         }
-        this.handleEmail = this.handleEmail.bind(this);
-        this.handlePswrd = this.handlePswrd.bind(this);
-        this.submitForm = this.submitForm.bind(this);
-
-      };
-    handleEmail(event)
+      
+     };
+    handleEmail = (event) =>
     {
       this.setState(
         {
@@ -27,7 +24,7 @@ class Login extends Component {
       let el = document.querySelector('#email-label');
       el.style.visibility='visible';
     }
-    handlePswrd(event)
+    handlePswrd = (event) =>
     {
       this.setState(
         {
@@ -37,7 +34,7 @@ class Login extends Component {
       let el = document.querySelector('#pswrd-label');
       el.style.visibility='visible';
     }
-    submitForm(e)
+    submitForm = (e) =>
     {
       e.preventDefault();
       this.props.loggedIn(true);

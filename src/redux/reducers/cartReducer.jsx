@@ -1,38 +1,7 @@
-// import { ADD_TO_CART } from '../actions/cartActions'
+ import data from  "../../config.json";
 
 
-const initState = {
-    items:[{
-        id:1,
-        heading : "HOT VACANCY",
-        price : 1680,
-        detail : "Advanced Job Posting",
-        products:[{items: "Hot Vacancy Job Posting",price:9900},{items:"Host Vacancy Job Posting",price:1650},{items:"7 days RESDEX",price:2500}],
-        quantity:0
-    },
-    {
-        id:2,
-       heading : "CLASSIFIED",
-       price : 800,
-       detail : "Basic Job Posting",
-       quantity:0
-   },
-   {   
-       id:3,
-       heading : "JP Lite",
-       price : 250,
-       detail : "Job Posting Lite",
-       quantity:0
-   }],
-    username:"Symbiosis pvt Ltd",
-    userId : "info@symbiosis.com",
-    addedItems:[],
-    total: 0,
-    quantity:0,
-    isLoggedIn : true,
-    cart : false,
-    lgnreg : "login"
-}
+const initState = data;
 const cartReducer= (state = initState,action)=>{
     switch(action.type)
     {
